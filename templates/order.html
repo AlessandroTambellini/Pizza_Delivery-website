@@ -1,0 +1,71 @@
+<h1>Order</h1>
+<hr />
+
+<form id="createOrder" action="/api/order" method="POST">
+    <div class="inputWrapper">
+        <div class="inputLabel">Four Cheeses 5€</div>
+        <input type="text" name="fourCheeses" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Margherita 5€</div>
+        <input type="text" name="margherita" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Pepperoni 6€</div>
+        <input type="text" name="pepperoni" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Speck & Arugula 6.5€</div>
+        <input type="text" name="speckArugola" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Vegetarian 6.5€</div>
+        <input type="text" name="vegetarian" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Buffalo Mozzarella 7€</div>
+        <input type="text" name="buffaloMozzarella" placeholder="0" />
+    </div>
+    <div class="inputWrapper">
+        <div class="inputLabel">Mushrooms 5.5€</div>
+        <input type="text" name="mushrooms" placeholder="0" />
+    </div>
+    <div class="formError"></div>
+    <div class="inputWrapper ctaWrapper">
+        <button type="submit" class="cta blue">Order</button>
+    </div>
+</form>
+
+<section class="payOrder">
+    <h2>Confirm Order</h2>
+    <ul class="orderList">
+        <li>Order</li>
+    </ul> <!-- li elements added through app.js -->
+    <form id="payment" action="/api/payment" method="POST">
+        <div class="inputWrapper">
+            <div class="inputLabel">Order id</div>
+            <input class="disabled displayOrderId" type="text" name="orderId" disabled />
+        </div>
+        <div class="inputWrapper">
+            <div class="inputLabel">Confirm Address</div>
+            <input class="addressInput" type="text" name="address" placeholder="via dei barboni 30, LU" />
+        </div>
+        <div class="inputWrapper">
+            <div class="inputLabel">Time of delivery</div>
+            <input class="deliveryTimeInput" type="text" name="deliveryTime" placeholder="7:30" />
+        </div>
+        <div class="inputWrapper">
+            <div class="inputLabel">Total Price</div>
+            <input class="disabled displayTotalPrice" type="text" name="totalPrice" disabled />
+        </div>
+        <div class="inputWrapper">
+            <div class="inputLabel">Card</div>
+            <input class="cardInput" type="text" name="stripeToken" placeholder="5555 5555 5555 4444" />
+        </div>
+        <div class="inputWrapper ctaWrapper">
+            <button type="submit" class="cta red">Confirm</button>
+        </div>
+        <div class="formError"></div>
+        <div class="formSuccess"><p>Successful order</p></div>
+    </form>
+</section>
